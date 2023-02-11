@@ -2,38 +2,105 @@
 <html>
   <head>
     <style>
-      #image {
+      #ghost1 {
         position: absolute;
         top: 50px;
         left: 50px;
         width: 5%;
         height: auto;
+        max-height: 90vh;
+        max-width: 100%;
       }
+      #ghost2 {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 7%;
+        height: auto;
+        max-height: 90vh;
+        max-width: 100%;
+      }
+      #mansion {
+        top: 50px;
+        left: 50px;
+        width: 50%;
+        height: auto;
+        margin-top: -25px;
+        margin-left: -25px;
+        max-height: 90vh;
+        max-width: 100%;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-color:rgb(63, 46, 46);
+      }
+      
     </style>
   </head>
   <body>
-    <img id="image" src="ghost.png" alt="your image">
+    <img id="ghost1" src="ghost.png" alt="your ghost">
+    <img id="ghost2" src="ghost.png" alt="your ghost">
+    <img id="mansion" src="static/room.gif" alt="home">
+
     <script>
-      const image = document.getElementById("image");
+      const ghost1 = document.getElementById("ghost1");
+      const boundary = {
+        left: 0,
+        right: window.innerWidth - ghost1.offsetWidth,
+        top: 0,
+        bottom: window.innerHeight - ghost1.offsetHeight
+      };
       
       document.addEventListener("keydown", function(event) {
-        let currentTop = image.offsetTop;
-        let currentLeft = image.offsetLeft;
+        let currentTop1 = ghost1.offsetTop;
+        let currentLeft1 = ghost1.offsetLeft;
+        let currentTop2 = ghost2.offsetTop;
+        let currentLeft2 = ghost2.offsetLeft;
         
         switch (event.key) {
           case "w":
-            image.style.top = currentTop - 50 + "px";
+            currentTop = Math.max(boundary.top, currentTop1 - 10);
+            ghost1.style.top = currentTop1 - 50 + "px";
             break;
           case "s":
-            image.style.top = currentTop + 50 + "px";
+            currentTop = Math.min(boundary.bottom, currentTop1 + 10);
+            ghost1.style.top = currentTop1 + 50 + "px";
             break;
           case "a":
-            image.style.left = currentLeft - 50 + "px";
+            currentLeft = Math.max(boundary.left, currentLeft1 - 10);
+            ghost1.style.left = currentLeft1 - 50 + "px";
             break;
           case "d":
-            image.style.left = currentLeft + 50 + "px";
+            currentLeft = Math.min(boundary.right, currentLeft1 + 10);
+            ghost1.style.left = currentLeft1 + 50 + "px";
+            break;
+          case "ArrowUp":
+          currentTop = Math.max(boundary.top, currentTop2 - 10);
+            ghost2.style.top = currentTop2 - 50 + "px";
+            break;
+          case "ArrowDown":
+            currentTop = Math.min(boundary.bottom, currentTop2 + 10);
+            ghost2.style.top = currentTop2 + 50 + "px";
+            
+            break;
+          case "ArrowLeft":
+            currentLeft = Math.min(boundary.right, currentLeft2 - 10);
+            ghost2.style.left = currentLeft2 - 50 + "px";
+            break;
+          case "ArrowRight":
+          currentLeft = Math.min(boundary.right, currentLeft2 + 10);
+            ghost2.style.left = currentLeft2 + 50 + "px";
             break;
         }
+
+     
+        
+      
+
       });
     </script>
   </body>
