@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Test</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <script type="text/javascript">
-        function codeAddress() {
-            alert('ok');
+  <head>
+    <style>
+      #image {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="image" src="ghost.png" alt="your image">
+    <script>
+      const image = document.getElementById("image");
+      
+      document.addEventListener("keydown", function(event) {
+        let currentTop = image.offsetTop;
+        let currentLeft = image.offsetLeft;
+        
+        switch (event.key) {
+          case "w":
+            image.style.top = currentTop - 100 + "px";
+            break;
+          case "s":
+            image.style.top = currentTop + 100 + "px";
+            break;
+          case "a":
+            image.style.left = currentLeft - 100 + "px";
+            break;
+          case "d":
+            image.style.left = currentLeft + 100 + "px";
+            break;
         }
-        location.replace("https://www.w3schools.com")
-        </script>
-    </head>
-    <body>
-    
-    </body>
+      });
+    </script>
+  </body>
 </html>
