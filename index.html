@@ -6,6 +6,8 @@
         position: absolute;
         top: 50px;
         left: 50px;
+        width: 5%;
+        height: auto;
       }
     </style>
   </head>
@@ -20,16 +22,16 @@
         
         switch (event.key) {
           case "w":
-            image.style.top = currentTop - 100 + "px";
+            image.style.top = currentTop - 50 + "px";
             break;
           case "s":
-            image.style.top = currentTop + 100 + "px";
+            image.style.top = currentTop + 50 + "px";
             break;
           case "a":
-            image.style.left = currentLeft - 100 + "px";
+            image.style.left = currentLeft - 50 + "px";
             break;
           case "d":
-            image.style.left = currentLeft + 100 + "px";
+            image.style.left = currentLeft + 50 + "px";
             break;
         }
       });
