@@ -106,7 +106,7 @@
     </div>
 
     <img id="character" width="135px" src="kelseyfront.png" alt="main">
-    <img id="peter" src="peterfront.png" alt="sub">
+    <img id="peter" width="135px" src="peterfront.png" alt="sub">
     <img id="mansion" src="static/room.gif" alt="home">
 
 
@@ -155,21 +155,25 @@ document.addEventListener("keydown", function(event) {
         currentTop2 = Math.max(boundary.top, currentTop2 - 10);
         peter.style.top = currentTop2 - 8 + "px";
         peter.src = "peterback.png";
+        peter1.style.width = "137px";
         break;
         case "ArrowDown":
         currentTop2 = Math.min(boundary.bottom, currentTop2 + 10);
         peter.style.top = currentTop2 + 8 + "px";
         peter.src = "peterfront.png";
+        peter1.style.width = "137px";
         break;
         case "ArrowLeft":
         currentLeft2 = Math.min(boundary.right, currentLeft2 - 10);
         peter.style.left = currentLeft2 - 8 + "px";
         peter.src = "peterleft.png";
+        peter1.style.width = "135px";
         break;
         case "ArrowRight":
         currentLeft2 = Math.min(boundary.right, currentLeft2 + 10);
         peter.style.left = currentLeft2 + 8 + "px";
         peter.src = "peterright.png";
+        peter1.style.width = "135px";
         break;
     }
 
