@@ -3,6 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Character Control</title>
+    <style>
+        body {
+        background-image: url("/static/blossom.gif");
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+  height: 100vh;
+      }
+    </style>
   </head>
   <body>
     <img id="player1" src="kelseyfront.png" alt="Player 1" style="position: absolute; top: 50px; left: 50px; width: 100px; height: 100px;">
@@ -10,7 +20,7 @@
     <script>
       const player1 = document.getElementById('player1');
       const player2 = document.getElementById('player2');
-      const moveStep = 10;
+      const moveStep = 25;
       
       document.addEventListener('keydown', (event) => {
         switch (event.keyCode) {
