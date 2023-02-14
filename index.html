@@ -2,8 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Character Control</title>
+    <title>Happy valentines to my love <3</title>
     <style>
+        header {
+        text-align: center;
+        background-color: #f9c7c8;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        text-align: center;
+      }
         body {
         background-image: url("/static/blossom.gif");
         background-size: cover;
@@ -15,8 +23,11 @@
     </style>
   </head>
   <body>
-    <img id="player1" src="kelseyfront.png" alt="Player 1" style="position: absolute; top: 50px; left: 50px; width: 100px; height: 100px;">
-    <img id="player2" src="peterfront.png" alt="Player 2" style="position: absolute; top: 100px; left: 100px; width: 80px; height: 100px;">
+    <header>
+        <h1 >Happy Valentine's Day!</h1>
+      </header>
+    <img id="player1" src="kelseyfront.png" alt="Player 1" style="position: absolute; top: 700px; left: 950px; width: 100px; height: 100px;">
+    <img id="player2" src="peterfront.png" alt="Player 2" style="position: absolute; top: 700px; left: 700px; width: 80px; height: 100px;">
     <script>
       const player1 = document.getElementById('player1');
       const player2 = document.getElementById('player2');
@@ -62,5 +73,6 @@
         }
       });
     </script>
+    <audio src="yiruma.mp3" autoplay loop></audio>
   </body>
 </html>
