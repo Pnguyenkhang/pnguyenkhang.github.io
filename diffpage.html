@@ -1,5 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
-    <body> <a href="index.html">Go to first Page</a></body>
+  <head>
+    <style>
+      #container {
+        position: relative;
+        width: 500px;
+        height: 500px;
+      }
+
+      #character {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <
+    <div id="container">
+      <img id="character" src="kelseyfront.png" />
+    </div>
+
+    <script>
+      const character = document.getElementById("character");
+      character.style.backgroundColor = 'transparent';
+      const container = document.getElementById("container");
+
+      let x = container.offsetWidth / 2 - character.offsetWidth / 2;
+      let y = container.offsetHeight / 2 - character.offsetHeight / 2;
+      character.style.left = x + "px";
+      character.style.top = y + "px";
+
+      document.onkeydown = function(event) {
+        switch (event.key) {
+          case "w":
+            
+            character.src = "kelseyback.png";
+            character.style.width = "115px";
+            y -= 20;
+            break;
+          case "a":
+            character.src = "kelseyleft.png";
+            character.style.width = "180px";
+            x -= 40;
+            break;
+          case "s":
+            character.src = "kelseyfront.png";
+            character.style.width = "115px";
+            character.style.position = character.style.position - 22;
+            y += 40;
+            break;
+          case "d":
+      
+            character.src = "kelseyright.png";
+            character.style.width = "180px";
+            x += 40;
+            break;
+        }
+        character.style.left = x + "px";
+        character.style.top = y + "px";
+      };
+    </script>
+  </body>
 </html>
