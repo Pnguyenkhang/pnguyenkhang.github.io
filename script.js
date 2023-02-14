@@ -18,25 +18,25 @@ document.addEventListener("keydown", function(event) {
         currentTop1 = Math.max(boundary.top, currentTop1 - 10);
         character.style.top = currentTop1 - 5 + "px";
         character.src = "kelseyback.png"
-        character.style.width = "27px";
+        character.style.width = "100px";
         break;
         case "s":
         currentTop1 = Math.min(boundary.bottom, currentTop1 + 10);
         character.style.top = currentTop1 + 5 + "px";
         character.src = "kelseyfront.png";
-        character.style.width = "27px";
+        character.style.width = "100px";
         break;
         case "a":
         currentLeft1 = Math.max(boundary.left, currentLeft1 - 10);
         character.style.left = currentLeft1 - 5 + "px";
         character.src = "kelseyleft.png";
-        character.style.width = "25px";
+        character.style.width = "90px";
         break;
         case "d":
         currentLeft1 = Math.min(boundary.right, currentLeft1 + 10);
         character.style.left = currentLeft1 + 5 + "px";
         character.src = "kelseyright.png";
-        character.style.width = "25px";
+        character.style.width = "90px";
         break;
         case "ArrowUp":
         currentTop2 = Math.max(boundary.top, currentTop2 - 10);
