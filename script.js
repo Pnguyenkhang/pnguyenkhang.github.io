@@ -1,5 +1,5 @@
 const character = document.getElementById("character");
-const ghost2 = document.getElementById("ghost2");
+const peter = document.getElementById("peter");
 const boundary = {
     left: 0,
     right: window.innerWidth - character.offsetWidth,
@@ -10,8 +10,8 @@ const boundary = {
 document.addEventListener("keydown", function(event) {
     let currentTop1 = character.offsetTop;
     let currentLeft1 = character.offsetLeft;
-    let currentTop2 = ghost2.offsetTop;
-    let currentLeft2 = ghost2.offsetLeft;
+    let currentTop2 = peter.offsetTop;
+    let currentLeft2 = peter.offsetLeft;
 
     switch (event.key) {
         case "w":
@@ -40,22 +40,23 @@ document.addEventListener("keydown", function(event) {
         break;
         case "ArrowUp":
         currentTop2 = Math.max(boundary.top, currentTop2 - 10);
-        ghost2.style.top = currentTop2 - 40 + "px";
+        peter.style.top = currentTop2 - 8 + "px";
+        peter.src = "peterback.png";
         break;
         case "ArrowDown":
         currentTop2 = Math.min(boundary.bottom, currentTop2 + 10);
-        ghost2.style.top = currentTop2 + 40 + "px";
-        
+        peter.style.top = currentTop2 + 8 + "px";
+        peter.src = "peterfront.png";
         break;
         case "ArrowLeft":
         currentLeft2 = Math.min(boundary.right, currentLeft2 - 10);
-        ghost2.style.left = currentLeft2 - 40 + "px";
-        ghost2.style.transform = "scaleX(-1)";
+        peter.style.left = currentLeft2 - 8 + "px";
+        peter.src = "peterleft.png";
         break;
         case "ArrowRight":
         currentLeft2 = Math.min(boundary.right, currentLeft2 + 10);
-        ghost2.style.left = currentLeft2 + 40 + "px";
-        ghost2.style.transform = "scaleX(1)";
+        peter.style.left = currentLeft2 + 8 + "px";
+        peter.src = "peterright.png";
         break;
     }
 

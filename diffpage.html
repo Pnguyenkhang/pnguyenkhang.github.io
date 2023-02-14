@@ -1,65 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      #container {
-        position: relative;
-        width: 500px;
-        height: 500px;
-      }
-
-      #character {
-        position: absolute;
-        width: 120px;
-        height: 120px;
-      }
-    </style>
+    <title>HAPPY VALENTINES DAY</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <
-    <div id="container">
-      <img id="character" src="kelseyfront.png" />
+    <div id="top-box"><h3>Happy Valentine's Day</h3></div>
+    <div id="sidebar">
+      <ul>
+        <li><a href="index.html">library</a></li>
+        <li><a href="#">blossom</a></li>
+      </ul>
     </div>
 
-    <script>
-      const character = document.getElementById("character");
-      character.style.backgroundColor = 'transparent';
-      const container = document.getElementById("container");
+    <img id="character" width="27px" src="kelseyfront.png" alt="main">
+    <img id="peter" src="peterfront.png" alt="sub">
+    <img id="mansion" src="static/blossom.gif" alt="home">
 
-      let x = container.offsetWidth / 2 - character.offsetWidth / 2;
-      let y = container.offsetHeight / 2 - character.offsetHeight / 2;
-      character.style.left = x + "px";
-      character.style.top = y + "px";
 
-      document.onkeydown = function(event) {
-        switch (event.key) {
-          case "w":
-            
-            character.src = "kelseyback.png";
-            character.style.width = "115px";
-            y -= 20;
-            break;
-          case "a":
-            character.src = "kelseyleft.png";
-            character.style.width = "180px";
-            x -= 40;
-            break;
-          case "s":
-            character.src = "kelseyfront.png";
-            character.style.width = "115px";
-            character.style.position = character.style.position - 22;
-            y += 40;
-            break;
-          case "d":
-      
-            character.src = "kelseyright.png";
-            character.style.width = "180px";
-            x += 40;
-            break;
-        }
-        character.style.left = x + "px";
-        character.style.top = y + "px";
-      };
-    </script>
+
+   <script src="script.js"></script>
   </body>
 </html>
